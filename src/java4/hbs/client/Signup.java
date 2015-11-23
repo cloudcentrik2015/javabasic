@@ -1,132 +1,139 @@
 package java4.hbs.client;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.EventQueue;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.Color;
 
-//import Login.thehandler;
+public class Signup {
 
-public class Signup extends JFrame {
-	
-	private JTextField item1;
-	private JTextField item2;
-	private JTextField item3;
-	private JTextField item4;
-	private JTextField item5;
-	private JTextField item6;
-	private JTextField item7;
-	private JButton    item8;
-	private JButton    item9;
-	
-	//private JPasswordField passwordField;
-	
-	public Signup(){ 
-		super("SignUp     Wellcom to  Hair dressing shop");
-		 setBackground(Color.green);
-		setLayout( null);
-		
-		item1 = new JTextField("First Name");
-		item1.setBounds(110, 10, 200, 30);
-		add(item1);
-		
-		
-		
-		item2 = new JTextField("Last name");
-		item2.setBounds(110, 30, 200, 30);
-		add(item2);;
-		/*
-		
-		passwordField = new JPasswordField("Mypass");
-		passwordField.setBounds(110, 50, 140, 30);
-		add(passwordField);*/
-		
-		item3 = new JTextField("Address");
-		item3.setBounds(110, 50, 200, 30);
-		add(item3);
-		
-		item4 = new JTextField("Email");
-		item4.setBounds(110, 70, 200, 30);
-		add(item4);
-		
-		item5 = new JTextField("Mobile no");
-		item5.setBounds(110, 90, 200, 30);
-		add(item5);
-		
-		item6 = new JTextField("Enter Password");
-		item6.setBounds(110, 110, 200, 30);
-		add(item6);
-		
-		item7 = new JTextField("Confirm Password");
-		item7.setBounds(110, 130, 200, 30);
-		add(item7);
-		
-		item8 = new JButton("Cancel");
-		item8.setBounds(110, 170, 90, 25);
-		add(item8);
-		item9 = new JButton("Ok");
-		item9.setBounds(260, 170, 50, 25);
-		add(item9);
-		
-		thehandler handler = new thehandler();
-		item1.addActionListener(handler);
-		item2.addActionListener(handler);
-		item3.addActionListener(handler);
-		item4.addActionListener(handler);
-		item5.addActionListener(handler);
-		item6.addActionListener(handler);
-		item7.addActionListener(handler);
-		item8.addActionListener(handler);
-		item9.addActionListener(handler);
-		//passwordField.addActionListener(handler);
-}	
-	
-		private class thehandler implements ActionListener{
-			public void actionPerformed(ActionEvent event){
-				
-			String string = "";
-				
-				if(event.getSource()==item1)
-						string=String.format("field 1: %s", event.getActionCommand());
-				
-				else if(event.getSource()==item2)
-						string=String.format("field 2: %s", event.getActionCommand());
-				else if(event.getSource()==item3)
-					string=String.format("field 3: %s", event.getActionCommand());
-				else if(event.getSource()==item4)
-					string=String.format("field 4: %s", event.getActionCommand());
-				else if(event.getSource()==item5)
-					string=String.format("field 5: %s", event.getActionCommand());
-				else if(event.getSource()==item6)
-					string=String.format("field 6: %s", event.getActionCommand());
-				else if(event.getSource()==item7)
-					string=String.format("field 7: %s", event.getActionCommand());
-				/*else if(event.getSource()==item8)
-					string=String.format("field 8: %s", event.getActionCommand());
-				else if(event.getSource()==item9)
-					string=String.format("field 9: %s", event.getActionCommand());
-					else if(event.getSource()==item3)
-						string=String.format("Password enter: %s", event.getActionCommand());
-					else if(event.getSource()==passwordField)
-						string=String.format("password field  is : %s",event.getActionCommand());*/
-					else if(event.getSource()==item8)
-						string=String.format(" Are you sure? : Press OK ",event.getActionCommand());
-					else if(event.getSource()==item9)
-						string=String.format(" Confirm? : Press OK ",event.getActionCommand());
-			
-			JOptionPane.showMessageDialog(null, string);
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void signup() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Signup window = new Signup();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-			
-		}
+		});
+	}
 
-		public void setDefalutCloseOperation(int exitOnClose) {
-			// TODO Auto-generated method stub
-			
-		}
+	/**
+	 * Create the application.
+	 */
+	public Signup() {
+		initialize();
+	}
 
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1287, 836);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblFirstName = new JLabel("First Name");
+		lblFirstName.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblFirstName.setBounds(91, 100, 213, 33);
+		frame.getContentPane().add(lblFirstName);
+		
+		textField = new JTextField();
+		textField.setBounds(393, 97, 321, 39);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblLastName = new JLabel("Last Name");
+		lblLastName.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblLastName.setBounds(91, 178, 213, 33);
+		frame.getContentPane().add(lblLastName);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(393, 175, 321, 39);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblAdress = new JLabel("Adress");
+		lblAdress.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblAdress.setBounds(91, 264, 135, 33);
+		frame.getContentPane().add(lblAdress);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(393, 242, 321, 39);
+		frame.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel lblPhoneNo = new JLabel("Phone No");
+		lblPhoneNo.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblPhoneNo.setBounds(91, 336, 125, 33);
+		frame.getContentPane().add(lblPhoneNo);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(393, 330, 321, 39);
+		frame.getContentPane().add(textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel lblEmail = new JLabel("Email");
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblEmail.setBounds(91, 397, 115, 39);
+		frame.getContentPane().add(lblEmail);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(393, 397, 321, 39);
+		frame.getContentPane().add(textField_4);
+		textField_4.setColumns(10);
+		
+		JLabel lblConfirmEmail = new JLabel("Confirm Email");
+		lblConfirmEmail.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblConfirmEmail.setBounds(91, 464, 231, 33);
+		frame.getContentPane().add(lblConfirmEmail);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(393, 461, 321, 39);
+		frame.getContentPane().add(textField_5);
+		textField_5.setColumns(10);
+		
+		JLabel lblSex = new JLabel("Sex");
+		lblSex.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblSex.setBounds(91, 535, 115, 33);
+		frame.getContentPane().add(lblSex);
+		
+		textField_6 = new JTextField();
+		textField_6.setBounds(393, 528, 321, 39);
+		frame.getContentPane().add(textField_6);
+		textField_6.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Cancel?");
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setForeground(new Color(255, 0, 0));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton.setBounds(543, 610, 171, 41);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("OK!!");
+		btnNewButton_1.setForeground(new Color(0, 255, 0));
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnNewButton_1.setBackground(Color.BLACK);
+		btnNewButton_1.setToolTipText("");
+		btnNewButton_1.setBounds(387, 611, 115, 41);
+		frame.getContentPane().add(btnNewButton_1);
+	}
 }

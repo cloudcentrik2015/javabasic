@@ -1,91 +1,99 @@
-
 package java4.hbs.client;
-import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
+import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.image.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JOptionPane;
-	
-	public class Login extends JFrame{
-		
-		private JTextField item1;
-		private JTextField item2;
-		private JButton item3;
-		private JButton item4;
-		private JButton item5;
-		private JPasswordField passwordField;
-		
-		public Login(){
-			super("LogIn     Wellcom to  Hair dressing shop");
-			setLayout( null);
-			
-			item1 = new JTextField(10);
-			item1.setBounds(110, 10, 140, 30);
-			add(item1);
-			
-			
-			
-			item2 = new JTextField("uneditbale", 10);
-			item2.setEditable(false);
-			/*add(item3);*/
-			
-			passwordField = new JPasswordField("Mypass");
-			passwordField.setBounds(110, 50, 140, 30);
-			add(passwordField);
-			
-			item3 = new JButton("Enter");
-			item3.setBounds(200, 100, 75, 25);
-			add(item3);
-			
-			item4 = new JButton("Cancel");
-			item4.setBounds(100, 100, 75, 25);
-			add(item4);
-			
-			item5 = new JButton("SignUp");
-			item5.setBounds(150, 150, 75, 40);
-			add(item5);
-			
-			thehandler handler = new thehandler();
-			item1.addActionListener(handler);
-			item2.addActionListener(handler);
-			item3.addActionListener(handler);
-			item4.addActionListener(handler);
-			item5.addActionListener(handler);
-			passwordField.addActionListener(handler);
-	}	
-		
-			private class thehandler implements ActionListener{
-				public void actionPerformed(ActionEvent event){
-					
-				String string = "";
-					
-					if(event.getSource()==item1)
-							string=String.format("field 1: %s", event.getActionCommand());
-					else if(event.getSource()==item2)
-							string=String.format("field 2: %s", event.getActionCommand());
-						else if(event.getSource()==item3)
-							string=String.format("Password enter: %s", event.getActionCommand());
-						else if(event.getSource()==passwordField)
-							string=String.format("password field  is : %s",event.getActionCommand());
-						else if(event.getSource()==item4)
-							string=String.format(" Are you sure? : %s",event.getActionCommand());
-						else if(event.getSource()==item5)
-							string=String.format(" Enter UserDetails : %s",event.getActionCommand());
-				
-				JOptionPane.showMessageDialog(null, string);
-				}
-				
-			}
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
-			public void setDefalutCloseOperation(int exitOnClose) {
-				// TODO Auto-generated method stub
-				
+public class Login {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login window = new Login();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
+		});
 	}
 
+	/**
+	 * Create the application.
+	 */
+	public Login() {
+		initialize();
+	}
 
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 931, 580);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(507, 63, 349, 39);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(507, 170, 349, 39);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblUserName = new JLabel("User Name");
+		lblUserName.setBounds(349, 63, 147, 39);
+		frame.getContentPane().add(lblUserName);
+		
+		JLabel lblNewLabel = new JLabel("Password");
+		lblNewLabel.setBounds(349, 170, 132, 50);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnSignup = new JButton("SignUp");
+		btnSignup.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				Signup ab= new Signup();
+				ab.signup();
+				
+			
+				
+			
+			}
 
+			
+		});
+		btnSignup.setBounds(507, 274, 164, 41);
+		frame.getContentPane().add(btnSignup);
+		
+		JButton btnSignin = new JButton("SignIn");
+		Image img = new ImageIcon(this.getClass().getResource("/ok.png")).getImage();
+		btnSignin.setIcon(new ImageIcon(img));
+		
+		btnSignin.setBounds(692, 274, 164, 41);
+		frame.getContentPane().add(btnSignin);
+		
+		JLabel label = new JLabel("");
+		Image img2 = new ImageIcon(this.getClass().getResource("/login1.png")).getImage();
+		label.setIcon(new ImageIcon(img2));
+		label.setBounds(15, 28, 320, 394);
+		frame.getContentPane().add(label);
+	}
+}
