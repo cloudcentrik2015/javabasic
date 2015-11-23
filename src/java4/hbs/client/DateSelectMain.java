@@ -1,4 +1,5 @@
 package java4.hbs.client;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -12,7 +13,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.awt.event.ActionEvent;
 
-public class Chose extends JFrame {
+public class DateSelectMain extends JFrame {
 
 	private JPanel contentPane;
 	private ObservingTextField textField;
@@ -24,7 +25,7 @@ public class Chose extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Chose frame = new Chose();
+					DateSelectMain frame = new DateSelectMain();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +37,7 @@ public class Chose extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Chose() {
+	public DateSelectMain() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 99);
 		contentPane = new JPanel();
