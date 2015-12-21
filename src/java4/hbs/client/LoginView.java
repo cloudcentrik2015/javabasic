@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class Login {
+public class LoginView {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -21,23 +21,12 @@ public class Login {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login window = new Login();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the application.
 	 */
-	public Login() {
+	public LoginView() {
 		initialize();
 	}
 
@@ -45,6 +34,7 @@ public class Login {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 931, 580);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,15 +61,22 @@ public class Login {
 		JButton btnSignup = new JButton("SignUp");
 		btnSignup.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Signup ab = new Signup();
-				ab.signup();
+				SignupView sv=new SignupView();
+				//sv.setVisible(true);
 			}
 
 		});
 		btnSignup.setBounds(507, 274, 164, 41);
 		frame.getContentPane().add(btnSignup);
 
-		JButton btnSignin = new JButton("SignIn");
+		JButton btnSignin = new JButton("Login");
+		btnSignin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CustomerMainView cmv=new CustomerMainView();
+				cmv.setVisible(true);
+			}
+
+		});
 		Image img = new ImageIcon(this.getClass().getResource("/ok.png"))
 				.getImage();
 		btnSignin.setIcon(new ImageIcon(img));
@@ -93,5 +90,6 @@ public class Login {
 		label.setIcon(new ImageIcon(img2));
 		label.setBounds(15, 28, 320, 394);
 		frame.getContentPane().add(label);
+		frame.setVisible(true);
 	}
 }
