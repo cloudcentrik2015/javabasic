@@ -2,6 +2,25 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="image"/>
+	<classpathentry kind="src" path="resouses"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="resouses/rs2xml.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc-3.7.15-M1.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc-3.7.15-SNAPSHOT-2.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc-3.7.15-SNAPSHOT-javadoc.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc-3.7.15-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc-3.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="resouses/sqlite-jdbc4-3.8.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/rs2xml.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc-3.7.15-M1.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc-3.7.15-SNAPSHOT-2.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc-3.7.15-SNAPSHOT-javadoc.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc-3.7.15-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc-3.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="src/java4/hbs/client/resoursesnew/sqlite-jdbc4-3.8.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Johir/Downloads/DatePicker-V0.99-2006.09.01.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Johir/Desktop/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

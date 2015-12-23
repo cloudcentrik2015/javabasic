@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 
-public class Signup {
+public class SignupView {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -22,23 +22,12 @@ public class Signup {
 	/**
 	 * Launch the application.
 	 */
-	public static void signup() {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Signup window = new Signup();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public Signup() {
+	public SignupView() {
+		super();
 		initialize();
 	}
 
@@ -135,5 +124,6 @@ public class Signup {
 		btnNewButton_1.setToolTipText("");
 		btnNewButton_1.setBounds(387, 611, 115, 41);
 		frame.getContentPane().add(btnNewButton_1);
+		frame.setVisible(true);
 	}
 }
