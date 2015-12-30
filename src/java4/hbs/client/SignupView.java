@@ -7,18 +7,26 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SignupView {
 
-	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-
+	public JFrame frame;
+	public JTextField textField;
+	public JTextField textField_1;
+	public JTextField textField_2;
+	public JTextField textField_3;
+	public JTextField textField_4;
+	public JTextField textField_5;
+	public JTextField textField_6;
+	public JTextField textField_7;
+	public JTextField textField_8;
+	public JTextField textField_9;
+	public JTextField textField_10;
+	public JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
 	/**
 	 * Launch the application.
 	 */
@@ -34,96 +42,166 @@ public class SignupView {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1287, 836);
+		frame.setBounds(100, 200, 700, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblFirstName = new JLabel("First Name");
-		lblFirstName.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblFirstName.setBounds(91, 100, 213, 33);
+		JLabel lblFirstName = new JLabel("Id");
+		lblFirstName.setBounds(80, 25, 83, 25);
+		lblFirstName.setFont(new Font("Tahoma", Font.BOLD, 20));
 		frame.getContentPane().add(lblFirstName);
 		
 		textField = new JTextField();
-		textField.setBounds(393, 97, 321, 39);
+		textField.setBounds(221, 21, 321, 39);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblLastName = new JLabel("Last Name");
-		lblLastName.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblLastName.setBounds(91, 178, 213, 33);
+		JLabel lblLastName = new JLabel("User name");
+		lblLastName.setBounds(80, 73, 144, 33);
+		lblLastName.setFont(new Font("Tahoma", Font.BOLD, 20));
 		frame.getContentPane().add(lblLastName);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(393, 175, 321, 39);
+		textField_1.setBounds(221, 73, 321, 39);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblAdress = new JLabel("Adress");
-		lblAdress.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblAdress.setBounds(91, 264, 135, 33);
+		JLabel lblAdress = new JLabel("Password");
+		lblAdress.setBounds(80, 128, 144, 33);
+		lblAdress.setFont(new Font("Tahoma", Font.BOLD, 20));
 		frame.getContentPane().add(lblAdress);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(393, 242, 321, 39);
+		textField_2.setBounds(221, 128, 321, 33);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
-		JLabel lblPhoneNo = new JLabel("Phone No");
-		lblPhoneNo.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblPhoneNo.setBounds(91, 336, 125, 33);
+		JLabel lblPhoneNo = new JLabel("Email");
+		lblPhoneNo.setBounds(80, 174, 125, 33);
+		lblPhoneNo.setFont(new Font("Tahoma", Font.BOLD, 20));
 		frame.getContentPane().add(lblPhoneNo);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(393, 330, 321, 39);
+		textField_3.setBounds(221, 174, 321, 39);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 		
-		JLabel lblEmail = new JLabel("Email");
-		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblEmail.setBounds(91, 397, 115, 39);
+		JLabel lblEmail = new JLabel("First name");
+		lblEmail.setBounds(80, 225, 136, 33);
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 20));
 		frame.getContentPane().add(lblEmail);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(393, 397, 321, 39);
+		textField_4.setBounds(221, 226, 321, 39);
 		frame.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
 		
-		JLabel lblConfirmEmail = new JLabel("Confirm Email");
-		lblConfirmEmail.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblConfirmEmail.setBounds(91, 464, 231, 33);
+		JLabel lblConfirmEmail = new JLabel("Last name");
+		lblConfirmEmail.setBounds(80, 275, 125, 33);
+		lblConfirmEmail.setFont(new Font("Tahoma", Font.BOLD, 20));
 		frame.getContentPane().add(lblConfirmEmail);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(393, 461, 321, 39);
+		textField_5.setBounds(221, 278, 321, 39);
 		frame.getContentPane().add(textField_5);
 		textField_5.setColumns(10);
 		
-		JLabel lblSex = new JLabel("Sex");
-		lblSex.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblSex.setBounds(91, 535, 115, 33);
-		frame.getContentPane().add(lblSex);
+		JLabel lblAge = new JLabel("Age");
+		lblAge.setBounds(80, 325, 115, 33);
+		lblAge.setFont(new Font("Tahoma", Font.BOLD, 20));
+		frame.getContentPane().add(lblAge);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(393, 528, 321, 39);
+		textField_6.setBounds(221, 330, 321, 39);
 		frame.getContentPane().add(textField_6);
 		textField_6.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Cancel?");
-		btnNewButton.setBackground(Color.BLACK);
-		btnNewButton.setForeground(new Color(255, 0, 0));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btnNewButton.setBounds(543, 610, 171, 41);
-		frame.getContentPane().add(btnNewButton);
+		JLabel lblSex = new JLabel("Sex");
+		lblSex.setBounds(80, 388, 83, 33);
+		lblSex.setFont(new Font("Tahoma", Font.BOLD, 20));
+		frame.getContentPane().add(lblSex);
 		
-		JButton btnNewButton_1 = new JButton("OK!!");
-		btnNewButton_1.setForeground(new Color(0, 255, 0));
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btnNewButton_1.setBackground(Color.BLACK);
-		btnNewButton_1.setToolTipText("");
-		btnNewButton_1.setBounds(387, 611, 115, 41);
-		frame.getContentPane().add(btnNewButton_1);
+		textField_7 = new JTextField();
+		textField_7.setBounds(221, 382, 321, 39);
+		frame.getContentPane().add(textField_7);
+		textField_7.setColumns(10);
+		
+		JLabel lblPhone = new JLabel("Phone");
+		lblPhone.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblPhone.setBounds(80, 434, 83, 33);
+		//lblSex.setFont(new Font("Tahoma", Font.BOLD, 30));
+		frame.getContentPane().add(lblPhone);
+		
+		textField_8 = new JTextField();
+		textField_8.setBounds(221, 434, 321, 39);
+		frame.getContentPane().add(textField_8);
+		textField_8.setColumns(10);
+		
+		JLabel lblAddress = new JLabel("Address");
+		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblAddress.setBounds(80, 483, 91, 39);
+		//lblSex.setFont(new Font("Tahoma", Font.BOLD, 30));
+		frame.getContentPane().add(lblAddress);
+		
+		textField_9 = new JTextField();
+		textField_9.setBounds(221, 486, 321, 39);
+		frame.getContentPane().add(textField_9);
+		textField_9.setColumns(10);
+		
+		JLabel lblCity = new JLabel("City");
+		lblCity.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblCity.setBounds(80, 590, 110, 34);
+		//lblSex.setFont(new Font("Tahoma", Font.BOLD, 30));
+		frame.getContentPane().add(lblCity);
+		
+		textField_10 = new JTextField();
+		textField_10.setBounds(221, 538, 321, 39);
+		frame.getContentPane().add(textField_10);
+		textField_10.setColumns(10);
+		
+		JLabel lblPostCode = new JLabel("PostCode");
+		lblPostCode.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblPostCode.setBounds(80, 538, 110, 39);
+		//lblSex.setFont(new Font("Tahoma", Font.BOLD, 30));
+		frame.getContentPane().add(lblPostCode);
+		
+		textField_11 = new JTextField();
+		textField_11.setBounds(393, 601, 321, -34);
+		frame.getContentPane().add(textField_11);
+		textField_11.setColumns(10);
+		textField_13 = new JTextField();
+		textField_13.setBounds(221, 590, 321, 33);
+		frame.getContentPane().add(textField_13);
+		textField_13.setColumns(10);
 		frame.setVisible(true);
+		
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnCancel.setBounds(221, 667, 97, 25);
+		frame.getContentPane().add(btnCancel);
+		
+		JButton btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnClear.setBounds(330, 667, 103, 25);
+		frame.getContentPane().add(btnClear);
+		
+		JButton btnSignup = new JButton("Signup");
+		btnSignup.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnSignup.setBounds(445, 667, 97, 25);
+		frame.getContentPane().add(btnSignup);
+		
+		
 	}
 }
